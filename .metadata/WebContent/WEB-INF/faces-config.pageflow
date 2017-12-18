@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15135321694290" configfile="/Stocks/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="UserLogin.xhtml" x="338" y="562" id="pf15135530706460" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf15135530706471 pf15135530706472" inlinks="pf15135530706472 pf15135530706473" path="/UserLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="UserHomepage.xhtml" x="554" y="562" id="pf15135530706474" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15135530706475" inlinks="pf15135530706471" path="/UserHomepage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ManagerLogin.xhtml" x="338" y="1330" id="pf15135530706476" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" outlinks="pf15135530706477 pf15135530706478 pf15135530706479 pf151355307064710" inlinks="pf15135530706478 pf151355307064710 pf151355307064711 pf151355307064712 pf151355307064713 pf151355681849232" path="/ManagerLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ManagerHomePage.xhtml" x="554" y="1522" id="pf151355307064715" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15135530706477" path="ManagerHomePage.xhtml" largeicon=""/>
+  <nodes xsi:type="pageflow:PFPage" name="AdminLogin.xhtml" x="122" y="178" id="pf151355307064716" referenceLink="//@navigationRule.12/@navigationCase.1/@toViewId|" outlinks="pf151355307064718 pf151356238384636" inlinks="pf151355307064718" path="/AdminLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ManagerHomePage.xhtml" x="554" y="1138" id="pf151355307064720" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf151357025060437" inlinks="pf15135530706479" path="/ManagerHomePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="UpdateUserProfile.xhtml" x="770" y="562" id="pf151355307064721" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf151355307064722" inlinks="pf15135530706475 pf151355307064722" path="/UpdateUserProfile.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="UserRegistration.xhtml" comment="register new user" x="122" y="562" id="pf151355307064723" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf15135530706473 pf151355307064724" path="/UserRegistration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="RegFailure.xhtml" x="338" y="946" id="pf151355307064725" referenceLink="//@navigationRule.9/@navigationCase.1/@toViewId|" inlinks="pf151355307064724 pf151355307064726" path="/RegFailure.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ManagerRegistration.xhtml" comment="register new manager" x="122" y="946" id="pf151355307064727" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf151355307064711 pf151355307064726" path="/ManagerRegistration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ViewRequest.xhtml" comment="Approve new manager" x="122" y="1330" id="pf151355307064728" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf151355307064712 pf151355307064713" path="/ViewRequest.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="U.xhtml" x="122" y="1714" id="pf151355307064729" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf151355681849233 pf151355681849232" path="/purchase.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="viewWatchList.xhtml" x="338" y="1714" id="pf151355681849234" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf151355681849233" path="/viewWatchList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="AdminHomePage.xhtml" x="338" y="178" id="pf151356208778535" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf151356238384636" path="/AdminHomePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="UpdateManagerProfile.xhtml" x="770" y="1138" id="pf151357025060438" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf151357025060439" inlinks="pf151357025060437 pf151357025060439" path="/UpdateManagerProfile.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="viewManagerProfile.xhtml" x="122" y="2099" id="pf151357025060440" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" outlinks="pf151357025060441 pf151357025060442" inlinks="pf151357025060442" path="/viewManagerProfile.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="UserHomePage.xhtml" x="338" y="2099" id="pf151357025060443" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf151357025060441" path="/UserHomePage.xhtml"/>
+  <links id="pf15135530706471" target="pf15135530706474" source="pf15135530706460" outcome="success" fromaction="#{login1.loginUser}"/>
+  <links id="pf15135530706477" target="pf151355307064715" source="pf15135530706476" outcome="success" fromaction="#{login1.loginManager}"/>
+  <links id="pf15135530706479" target="pf151355307064720" source="pf15135530706476" outcome="success" fromaction="#{login1.loginManager}"/>
+  <links id="pf15135530706475" target="pf151355307064721" source="pf15135530706474" fromaction="#{reg.viewUserDetails}"/>
+  <links id="pf15135530706473" target="pf15135530706460" source="pf151355307064723" outcome="success" fromaction="#{reg.registerUser}"/>
+  <links id="pf151355307064724" target="pf151355307064725" source="pf151355307064723" outcome="failure" fromaction="#{reg.registerUser}"/>
+  <links id="pf151355307064711" target="pf15135530706476" source="pf151355307064727" outcome="success" fromaction="#{reg.registerManager}"/>
+  <links id="pf151355307064726" target="pf151355307064725" source="pf151355307064727" outcome="failure" fromaction="#{reg.registerManager}"/>
+  <links id="pf151355307064712" target="pf15135530706476" source="pf151355307064728" outcome="success" fromaction="#{reg.approveManagerRequest}"/>
+  <links id="pf151355307064713" target="pf15135530706476" source="pf151355307064728" outcome="success" fromaction="#{reg.rejectManagerRequest}"/>
+  <links id="pf151355681849233" target="pf151355681849234" source="pf151355307064729" outcome="success" fromaction="#{stockApiBean.userWatchList}"/>
+  <links id="pf151355681849232" target="pf15135530706476" source="pf151355307064729" outcome="Login" fromaction="#{login1.loginManager}"/>
+  <links id="pf151356238384636" target="pf151356208778535" source="pf151355307064716" outcome="success" fromaction="#{login1.loginAdmin}"/>
+  <links id="pf151357025060437" target="pf151357025060438" source="pf151355307064720" fromaction="#{reg.viewManagerDetails}"/>
+  <links id="pf151357025060441" target="pf151357025060443" source="pf151357025060440" outcome="success" fromaction="#{reg.chooseManager}"/>
+  <links id="pf15135530706472" target="pf15135530706460" source="pf15135530706460" outcome="login" fromaction="#{login1.loginUser}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf15135530706478" target="pf15135530706476" source="pf15135530706476" outcome="login" fromaction="#{login1.loginManager}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf151355307064718" target="pf151355307064716" source="pf151355307064716" outcome="Login" fromaction="#{login1.loginAdmin}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf151355307064710" target="pf15135530706476" source="pf15135530706476" outcome="Login" redirect="true" fromaction="#{login1.loginManager}">
+    <bendPoints d1Height="-66" d2Height="-66"/>
+    <bendPoints d1Width="-94" d1Height="-66" d2Width="-94" d2Height="-66"/>
+    <bendPoints d1Width="-94" d2Width="-94"/>
+  </links>
+  <links id="pf151355307064722" target="pf151355307064721" source="pf151355307064721" outcome="success" fromaction="#{reg.updateUser}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf151357025060439" target="pf151357025060438" source="pf151357025060438" outcome="success" fromaction="#{reg.updateUser}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf151357025060442" target="pf151357025060440" source="pf151357025060440" outcome="failure" fromaction="#{reg.chooseManager}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

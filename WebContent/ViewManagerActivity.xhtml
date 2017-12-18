@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="table.css"  />
+	<style type="text/css">
+.col-xs-updated {
+	width: 92% !important;
+}
+</style>
+
+</h:head>
+<h:body>
+
+	
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">Manager Activity</div>
+	</div>
+			<h:form id="AdminPage" styleClass="form-horizontal" >
+				    		<h:dataTable value="#{reg.viewManagerActivity()}" var="m"
+				    		styleClass="admin-table" border="2" cellspacing="1" cellpadding="1"
+    						headerClass="admin-table-header"
+    						rowClasses="admin-table-odd-row,admin-table-even-row">
+
+    			<h:column>
+    			
+    				<f:facet name="header">First Name</f:facet>
+    				#{m.fname}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    			
+    				<f:facet name="header">Last Name</f:facet>
+    				#{m.lname}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    				
+    				<f:facet name="header">Email</f:facet>
+    				#{m.email}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    				
+    				<f:facet name="header">Phone Number</f:facet>
+    				#{m.phonenumber}
+    				
+    			</h:column>
+    		
+    			<h:column>
+    				
+    				<f:facet name="header">Address</f:facet>
+    				#{m.address}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    				
+    				<f:facet name="header">Commission</f:facet>
+    				#{m.commission}
+    				
+    			</h:column>
+    			
+    			<h:column>	
+    				<f:facet name="header">Password</f:facet>
+    				#{m.password}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    				
+    				<f:facet name="header">Username</f:facet>
+    				#{m.userName}
+    				
+    			</h:column>
+    			
+    		</h:dataTable>				
+	
+				</h:form>
+			</div>
+
+</h:body>
+</html>
+
+
+

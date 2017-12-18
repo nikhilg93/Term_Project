@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="table.css"  />
+	<style type="text/css">
+.col-xs-updated {
+	width: 92% !important;
+}
+</style>
+
+</h:head>
+<h:body>
+	<h1>Manager Requests</h1>
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">Welcome</div>
+	</div>
+	 <h:form id="Index" styleClass="form-horizontal" >
+					<h:button value="Homepage" outcome="UserHomepage.xhtml" class="btn btn-primary " />
+				   </h:form>
+                    <br></br><br></br>
+			<h:form id="ManagerProfile" title="manager" styleClass="form-horizontal" >
+			<h:messages style="color: green;"/>
+				    		<h:dataTable value="#{reg.names()}" var="m"
+				    		styleClass="admin-table" border="2" cellspacing="1" cellpadding="1"
+    						headerClass="admin-table-header"
+    						rowClasses="admin-table-odd-row,admin-table-even-row">
+
+    			<h:column>
+    			
+    				<f:facet name="header">First Name</f:facet>
+    				#{m.fname}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    			
+    				<f:facet name="header">Last Name</f:facet>
+    				#{m.lname}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    				
+    				<f:facet name="header">Email</f:facet>
+    				#{m.email}
+    				
+    			</h:column>
+    			
+    			<h:column>
+    				
+    				<f:facet name="header">Phone Number</f:facet>
+    				#{m.phonenumber}
+    				
+    			</h:column>
+    		
+    			<h:column>
+    				
+    				<f:facet name="header">Commission</f:facet>
+    				#{m.commission}
+    				
+    			</h:column>
+    		
+    			<h:column>
+    			
+			<f:facet name="header">Approve</f:facet>
+   
+    					<input type="hidden" name="approve" value="#{m.userName}" />
+   						 <h:commandButton value="Approve" actionListener="#{reg.chooseManager}" styleClass="btn btn-success"/>
+							
+    			</h:column>
+			 
+    				</h:dataTable>
+				</h:form>
+			</div>
+
+</h:body>
+</html>

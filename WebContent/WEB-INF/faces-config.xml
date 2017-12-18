@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.assignment.Login.LoginBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>registrationBean</managed-bean-name>
+		<managed-bean-class>com.assignment.Login.RegistrationBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+		<navigation-rule>
+        
+        <from-view-id>/UserLogin.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{login1.loginUser}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/UserHomepage.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{login1.loginUser}</from-action>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/UserLogin.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        
+        <from-view-id>/ManagerLogin.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{login1.loginManager}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>ManagerHomePage.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{login1.loginManager}</from-action>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/ManagerLogin.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+        <navigation-rule>
+        
+        <from-view-id>/purchase.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{stockApiBean.userWatchList}</from-action>
+ 		<from-outcome>success</from-outcome>
+            <to-view-id>/viewWatchList.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{login1.loginManager}</from-action>
+            <from-outcome>Login</from-outcome>
+            <to-view-id>/ManagerLogin.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+        <navigation-rule>
+            <from-view-id>/ManagerLogin.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{login1.loginManager}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ManagerHomePage.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{login1.loginManager}</from-action>
+            <from-outcome>Login</from-outcome>
+            <to-view-id>/ManagerLogin.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        </navigation-rule>
+        
+        
+        
+        <navigation-rule>
+            <from-view-id>/UserHomepage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.viewUserDetails}</from-action>
+           
+            <to-view-id>/UpdateUserProfile.xhtml</to-view-id>
+        </navigation-case>
+        
+       
+        </navigation-rule>
+        <navigation-rule>
+            <from-view-id>/UpdateUserProfile.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.updateUser}</from-action>
+           	<from-outcome>success</from-outcome>
+            <to-view-id>/UpdateUserProfile.xhtml</to-view-id>
+        </navigation-case>
+           
+        </navigation-rule>
+                <navigation-rule>
+            <from-view-id>/ManagerHomePage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.viewManagerDetails}</from-action>
+           	
+            <to-view-id>/UpdateManagerProfile.xhtml</to-view-id>
+        </navigation-case>
+           
+        </navigation-rule>
+        
+        <navigation-rule>
+            <from-view-id>/UpdateManagerProfile.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.updateUser}</from-action>
+           	<from-outcome>success</from-outcome>
+            <to-view-id>/UpdateManagerProfile.xhtml</to-view-id>
+        </navigation-case>
+        
+       
+        </navigation-rule>
+	
+        
+	<navigation-rule>
+		
+        <description>register new user</description>
+        <display-name>UserRegistration.xhtml</display-name>
+        <from-view-id>/UserRegistration.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.registerUser}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/UserLogin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{reg.registerUser}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/RegFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>register new manager</description>
+        <display-name>ManagerRegistration.xhtml</display-name>
+        <from-view-id>/ManagerRegistration.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.registerManager}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ManagerLogin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{reg.registerManager}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/RegFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Approve new manager</description>
+        <display-name>ViewRequest.xhtml</display-name>
+        <from-view-id>/ViewRequest.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.approveManagerRequest}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ManagerLogin.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    <navigation-rule>
+        <description>Reject new manager</description>
+        <display-name>ViewRequest.xhtml</display-name>
+        <from-view-id>/ViewRequest.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{reg.rejectManagerRequest}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ManagerLogin.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>AdminLogin.xhtml</display-name>
+    	<from-view-id>/AdminLogin.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-action>#{login1.loginAdmin}</from-action>
+    		<from-outcome>success</from-outcome>
+    		<to-view-id>/AdminHomePage.xhtml</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+    		<from-action>#{login1.loginAdmin}</from-action>
+    		<from-outcome>Login</from-outcome>
+    		<to-view-id>/AdminLogin.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+       <navigation-rule>
+    	<display-name>viewManagerProfile.xhtml</display-name>
+    	<from-view-id>/viewManagerProfile.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-action>#{reg.chooseManager}</from-action>
+    		<from-outcome>success</from-outcome>
+    		<to-view-id>/UserHomePage.xhtml</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+    		<from-action>#{reg.chooseManager}</from-action>
+    		<from-outcome>failure</from-outcome>
+    		<to-view-id>/viewManagerProfile.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    	
+</faces-config>
